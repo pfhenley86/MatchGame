@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MatchGame"
         mc:Ignorable="d"
-        Title="This is a WPF Window" Height="450" Width="800">
+        Title="Find all of the matching animals" Height="450" Width="400">
     
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBox FontSize="18px" Text="XAML helps you design great user interfaces"/>
