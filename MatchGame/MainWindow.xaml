@@ -6,11 +6,22 @@
         xmlns:local="clr-namespace:MatchGame"
         mc:Ignorable="d"
         Title="Find all of the matching animals" Height="450" Width="400">
-    
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBox FontSize="18px" Text="XAML helps you design great user interfaces"/>
-        <Button Width="50" Margin="5,10" Content="I agree!"/>
 
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="74*"/>
+        </Grid.RowDefinitions>
+
+    </Grid>
 
 </Window>
