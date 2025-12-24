@@ -27,6 +27,7 @@ namespace MatchGame
 
             timer.Interval = TimeSpan.FromSeconds(.1);
             timer.Tick += Timer_Tick;
+
             SetUpGame();
         }
 
