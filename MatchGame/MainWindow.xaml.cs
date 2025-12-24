@@ -59,31 +59,39 @@ namespace MatchGame
 
             Random random = new Random();
 
-            foreach(TextBlock textblock in mainGrid.Children.OfType<TextBlock>())
+            foreach(TextBlock textBlock in mainGrid.Children.OfType<TextBlock>())
             {
-                int index = random.Next(animalEmoji.Count);
-
-                string nextEmoji = animalEmoji[index];
-                textblock.Text = nextEmoji;
-                animalEmoji.RemoveAt(index); 
+                if (textBlock.Name != "timeTextBlock")
+                {
+                    textBlock.Visibility = Visibility.Visible;
+                    int index = random.Next(animalEmoji.Count);
+                    string nextEmoji = animalEmoji[index];
+                    textBlock.Text = nextEmoji;
+                    animalEmoji.RemoveAt(index);
+                }
             }
-        }
 
+            timer.Start();
+            tenthOfSecondsElapsed = 0;
+            matchesFound = 0;
+        }
+        
         TextBlock lastTextBlockClicked;
         bool findingMatch = false;
 
         private void TextBlock_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            TextBlock textblock = sender as TextBlock;
+            TextBlock textBlock = sender as TextBlock;
             if (findingMatch == false)
             {
-                textblock.Visibility = Visibility.Hidden;
-                lastTextBlockClicked = textblock;
+                textBlock.Visibility = Visibility.Hidden;
+                lastTextBlockClicked = textBlock;
                 findingMatch = true;
             }
-            else if (textblock.Text == lastTextBlockClicked.Text)
+            else if (textBlock.Text == lastTextBlockClicked.Text)
             {
-                textblock.Visibility = Visibility.Hidden;
+                matchesFound++;
+                textBlock.Visibility = Visibility.Hidden;
                 findingMatch = false;
 
             }
